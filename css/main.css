@@ -11,7 +11,7 @@ body {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6, time {
+h1, h2, h3, h4, h5, h6, time, small {
   font-weight: normal;
   margin: 0px;
 }
@@ -45,7 +45,7 @@ nav > span {
   flex-basis: 50%;
 }
 
-nav > span > * {
+nav > span > *:not(#subtitle) {
   margin: 8px;
   display: inline-block;
   vertical-align: middle;
@@ -56,15 +56,30 @@ nav > span:last-child {
   text-align: right;
 }
 
-main {
+/* main {
+  width: 70%;
+  margin: 10px auto;
+  padding: 20px 0px;
+  background-color: #1a1a1a;
+  /* border-top: 6px solid #2bd455;
+  border-radius: 8px;
+} */
+
+.segment {
   width: 70%;
   margin: 10px auto;
   padding: 20px 0px;
   background-color: #1a1a1a;
   /* border-top: 6px solid #2bd455; */
   border-radius: 8px;
+  padding: 20px;
 }
 
-.segment {
-  padding: 20px;
+.title {
+  text-align: center;
+}
+
+#subtitle {
+  display: inline-block;
+  margin: 0px 8px 8px;
 }
