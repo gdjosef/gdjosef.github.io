@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<link rel="icon" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/css/prism-vsc-dark-plus.css" />
+		<title>AI Generated Strip Club Messages • jacktrepping</title>
+
+		
+
+		<link rel="modulepreload" href="/_app/start-1be1eeb1.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-7b03c368.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-7636c66a.js">
+		<link rel="modulepreload" href="/_app/pages/blog/ai-generated-strip-club-messages.md-2ebb9355.js">
+		<link rel="modulepreload" href="/_app/chunks/_layout-2389e420.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-d0c38d10.css">
+		<link rel="stylesheet" href="/_app/assets/_layout-592db3ae.css">
+
+		<script type="module">
+			import { start } from "/_app/start-1be1eeb1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-7636c66a.js"),
+						import("/_app/pages/blog/ai-generated-strip-club-messages.md-2ebb9355.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "\u002Fblog\u002Fai-generated-strip-club-messages",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<div class="container svelte-jf5344"><a class="skip-nav" href="#main-content">skip to main content
+  </a>
+  <nav class="svelte-18wyq0a"><h3 class="title-link home svelte-18wyq0a"><a href="/" class="svelte-18wyq0a">HOME</a></h3>
+  <h3 class="title-link coloured svelte-18wyq0a"><a href="/blog" class="svelte-18wyq0a">blog</a></h3>
+  <h3 class="title-link coloured svelte-18wyq0a"><a href="/about" class="svelte-18wyq0a">about</a></h3>
+</nav>
+  <main id="main-content">
+
+<article><h2 class="title svelte-1g78ji8">AI Generated Strip Club Messages</h2>
+  <em><time datetime="2021-12-22T00:00:00.000Z" class="svelte-1g78ji8">2021, Dec 22</time></em>
+  <p><img src="/assets/img/exploding_computer.gif" alt="Exploding computer" title="Google's computers begging for mercy after training"></p>
+<h1>WHAT!?</h1>
+<p>Yes, ladies and gentlemen, I’ve successfully stopped the habit of making blog posts relating to this site and made something of use. So without further ado, I’ll get into the meat of this now.</p>
+<p>For this project I made, I decided to make a model for GPT-2 to create messages from the Discord server I usually talk to, “the strip club”. Truly the biggest clusterfuck of teenagers spitting out the most random shit imaginable, ever since December 10, 2020.</p>
+<p>My main inspiration for this project entirely lies on <a href="https://www.youtube.com/c/GDColon" rel="nofollow">Colon</a>’s video about <a href="https://www.youtube.com/watch?v=EpSRlZTh0U8" rel="nofollow"><em>AI Generated Geometry Dash Comments</em></a>, great comedic video, would rate 5/5 knee slaps 💥. Apart from the video, ever since I encountered OpenAI’s GPT-3 API, I’ve been interested in utilizing it inside one of my projects, but for this one, I instead used GPT-2. No other reason other than I couldn’t be arsed to wait for the API access and the pricing for GPT-3’s fine-tuning service, with GPT-2 being able to do it, well free really.</p>
+<h1>Process</h1>
+<h2>Getting the data (like I’m Meta)</h2>
+<p>If we’re trying to fine-tune an AI, we’re going to need some data. Discord doesn’t give us a way to export entire channels as a big fat, probably less than 50 megabyte on this scale text file, which I’d expect seeing as not many people would be doing this. Thankfully, we have a tool called <a href="https://github.com/lnxcz/discord-scraper" rel="nofollow"><code>discord-scraper</code></a>, a program that scrapes an <code>x</code> amount of messages using the Discord API. I did modify it slightly for my needs, removing the attachment links as this would be a purely text-only training file and modifying the format I wanted it to be in.</p>
+<h2>Fine-tuning time</h2>
+<p>I’ll keep this short and sweet. I don’t do Python. Quite literally, my only experience is boring command line programs and self-bots. So I was going in this blind. I took an 8 hour TensorFlow course, created my own model of GPT-2 by myself. I solved world hunger using only the power of armour stands and… that didn’t happen. I followed a YouTube tutorial to use and fine-tune from a text file using a module called <a href="https://github.com/minimaxir/gpt-2-simple" rel="nofollow"><code>gpt-2-simple</code></a>. Listen, I wasn’t going to manually do it from the <a href="https://github.com/openai/gpt-2" rel="nofollow"><code>openai/gpt-2</code></a> repo. It was going to reach this at some point and that point was this.</p>
+<p>For the actual process of fine-tuning our AI, firstly I loaded up a Jupyter notebook inside of Google Colab since I sure was hell not going to even touch/train it on my laptop. I picked a GPU for my hardware acceleration to not have to wait 5000 years for it to train. Setup some code cells such as setting the TF version, installing all the packages, mounting Google Drive and lastly, doing the function to train, making me wait an eternity (or about 1 hour and 20 minutes).</p>
+<p>I probably won’t be releasing the model to the public out of privacy for the people whose messages are tied to their Discord tag that are of a pretty sensitive nature. I might retrain it with the tags and other identifiable information in the content of the messages, but only time will tell if I’ll ever release those versions of the model. Sorry.</p>
+<h2>Text Generation</h2>
+<p>After all this work. The scraping, the module downloading, some other stuff that’s probably important. I arrived here. It’s time to use the model. I installed <a href="https://github.com/minimaxir/gpt-2-simple" rel="nofollow"><code>gpt-2-simple</code></a>, set it up to use my model using:</p>
+<pre class="language-py"><!-- HTML_TAG_START --><code class="language-py"><span class="token keyword">import</span> gpt_2_simple <span class="token keyword">as</span> gpt2
+
+sess <span class="token operator">=</span> gpt2<span class="token punctuation">.</span>start_tf_sess<span class="token punctuation">(</span><span class="token punctuation">)</span>
+gpt2<span class="token punctuation">.</span>load_gpt2<span class="token punctuation">(</span>sess<span class="token punctuation">)</span>
+
+gpt2<span class="token punctuation">.</span>generate<span class="token punctuation">(</span>sess<span class="token punctuation">,</span> run_name<span class="token operator">=</span><span class="token string">'run1'</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre>
+<p>And behold, 2 days of work and even more because of planning, returned this:</p>
+<pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;caption jordan
+
+[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;caption
+
+[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;caption
+
+[REDACTED]: &amp;caption
+
+[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;caption
+
+[REDACTED]: &amp;caption
+
+[REDACTED]: &amp;uncaption
+
+[REDACTED]: &amp;caption **the</code><!-- HTML_TAG_END --></pre>
+<p>Turns out our inability to use our bot-only channels backfired on us. And this happened a lot too with some of us and our tendency to repeat the exact same words as reactions every time returned a long list of someone saying “this” over and over again.</p>
+<h1>What’s Next? / Conclusion</h1>
+<p>You may be asking: “Where’s the content? Did you waste 5 minutes of my precious lifetime because of this shitty AI project I made?”</p>
+<p>The answer is probably. When we’re done working on another video reading all of our favourite ones out, you’ll get to see them. So wait approximately 10 years for us to upload that video. It’ll totally be worth it.</p>
+<p><a href="https://www.youtube.com/channel/UC3oGNruOQCIP6I-yFjldw4g" rel="nofollow"><img src="https://img.shields.io/badge/YouTube-the%20strip%20club-red?logo=youtube" alt="YouTube channel - the strip club"></a></p>
+</article></main>
+</div>
+
+
+
+			
+		</div>
+	</body>
+</html>
