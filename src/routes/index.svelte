@@ -1,7 +1,7 @@
-<!-- <script context="module">
+<script context="module">
   export async function load({ fetch }) {
     const { posts } = await fetch("/blog/posts.json")
-      .then((res) => res.json());
+      .then(res => res.json());
 
     return {
       props: {
@@ -15,28 +15,61 @@
   import dayjs from "dayjs";
 
   export let posts;
-</script> -->
+</script>
 
-<svelte:head>
-  <title>jacktrepping</title>
-</svelte:head>
-
+<img src="/mason.jpg" alt="A person eating pizza" title="not actually me" height="300">
 <h1 class="title">Josef's Mediocre Personal Website</h1>
-<p>Hi, I'm Josef. I'm a wannabe programmer and web/software developer. See the links in the navigation bar above to check some more stuff out. Or not. I'm not your parents.</p>
-<p>You could follow me on Twitter too (<a href="https://twitter.com/jacktrepping">@jacktrepping</a>). I don't post a lot about my small dev logs on there. I might just make a sh**ty remake of Twitter by making a microblogging part on this site so no one has to see the more boring part of my profile (the normal boring part is my profile).</p>
-<p>Pretty much it. If you don't wanna stay on this site, here's a link to <a href="https://duckduckgo.com">DuckDuckGo</a>.</p>
 
-<!-- <div>
-  {#each posts as post}
+<h2>Posts</h2>
+<ul>
+{#each posts as post}
+  <div class="article-item">
     <article>
-      <h2 class="title">{post.title}</h2>
-      <time datetime="{post.date}">{dayjs(post.date).format("YYYY, MMM DD")}</time>
+      <h2 class="article-title">
+        <a class="article-link" href="/blog/{post.slug}">{post.title}</a>
+      </h2>
+      <div class="meta">
+        <span>
+          <time datetime="{post.date}">{dayjs(post.date).format("YYYY, MMM DD")}</time>
+        </span>
+      </div>
     </article>
-  {/each}
-</div>
+  </div>
+{/each}
+</ul>
 
 <style>
-  h2.title {
+  h2.article-title {
+    margin-top: 16px;
     margin-bottom: 0;
   }
-</style> -->
+
+  a.article-link {
+    text-decoration: none;
+    color: currentColor;
+    transition: color 0.2s ease;
+  }
+
+  a.article-link:hover {
+    color: #bbceee;
+  }
+
+  time {
+    color: #aaa;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .article-item:first-of-type article h2.article-title {
+    margin-top: 0;
+  }
+  
+  .meta span {
+    font-size: .95em;
+  }
+</style>

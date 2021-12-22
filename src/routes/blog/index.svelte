@@ -24,15 +24,15 @@
 <h1 class="title">Blog</h1>
 <ul>
   {#each posts as post}
-  <li class="list-item">
+  <li class="article-item">
     <article>
       <div class="meta">
         <span>
           <time datetime="{post.date}">{dayjs(post.date).format("YYYY, MMM DD")}</time>
         </span>
       </div>
-      <h2 class="title">
-        <a sveltekit:prefetch href="/blog/{post.slug}">{post.title}</a>
+      <h2 class="article-title">
+        <a href="/blog/{post.slug}">{post.title}</a>
       </h2>
     </article>
   </li>
@@ -44,20 +44,19 @@
     margin-bottom: 0;
   }
 
-  h2.title {
+  h2.article-title {
     margin-top: 16px;
     margin-bottom: 0;
   }
 
   a {
-    color: #ddd;
-    border-bottom: 1px solid transparent;
-    transition: all .1s ease-in-out;
+    text-decoration: none;
+    color: currentColor;
+    transition: color 0.2s ease;
   }
 
   a:hover {
-    color: #8ea9e4;
-    border-color: #8ea9e4;
+    color: #bbceee;
   }
 
   time {
@@ -71,13 +70,13 @@
     padding: 0;
   }
 
-  .list-item article {
+  .article-item article {
     display: flex;
     flex-flow: row nowrap;
     align-items: baseline;
   }
 
-  .list-item:first-of-type article h2.title {
+  .article-item:first-of-type article h2.article-title {
     margin-top: 0;
   }
 

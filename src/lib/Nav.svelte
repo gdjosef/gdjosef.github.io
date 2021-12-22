@@ -1,11 +1,12 @@
 <nav>
-  <h3 class="home"><a href="/" class="title-link">HOME</a></h3>
-  <h3 class="coloured"><a href="/blog" class="title-link ">blog</a></h3>
-  <h3 class="coloured"><a href="/about" class="title-link">about</a></h3>
+  <h3 class="title-link home"><a href="/">HOME</a></h3>
+  <h3 class="title-link coloured"><a href="/blog">blog</a></h3>
+  <h3 class="title-link coloured"><a href="/about">about</a></h3>
 </nav>
 
 <style>
   nav {
+    margin: 1rem 0;
     display: flex;
     align-items: baseline;
   }
@@ -16,8 +17,7 @@
   }
 
   h3 {
-    margin-bottom: 0;
-    margin-right: .625rem;
+    margin: 0 .625rem 0 0;
     font-weight: normal;
   }
 

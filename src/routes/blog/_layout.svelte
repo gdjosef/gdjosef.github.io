@@ -1,8 +1,7 @@
 <script>
   import dayjs from "dayjs";
 
-  export let title;
-  export let date;
+  export let title, date;
 </script>
 
 <svelte:head>

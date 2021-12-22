@@ -1,22 +1,21 @@
 <script>
-  import "../app.css";
   import Nav from "$lib/Nav.svelte";
+  import "../app.css";
 </script>
 
-<svelte:head>
-  <title>jacktrepping</title>
-</svelte:head>
-
-<div class="wrapper">
+<div class="container">
+  <a class="skip-nav" href="#main-content">
+    skip to main content
+  </a>
   <Nav />
-  <div>
+  <main id="main-content">
     <slot></slot>
-  </div>
+  </main>
 </div>
 
 <style>
-  .wrapper {
-    max-width: 800px;
+  .container {
+    max-width: 650px;
     margin: 0 auto;
     padding: 10px;
   }
