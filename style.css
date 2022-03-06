@@ -4,6 +4,8 @@
   --color-subtle: rgb(22, 27, 34);
   --color-orangered: rgb(255, 69, 0);
   --color-twitter-blue: rgb(29, 155, 240);
+  --color-mastodon-blue: rgb(48, 135, 212);
+  --color-baba-cyan: rgb(94, 156, 208);
   --color-blue: rgb(102, 102, 238);
   --color-blue-light: rgb(190, 190, 255);
   --color-mint: rgb(9, 184, 118);
@@ -159,6 +161,11 @@ a {
 .gradient--color-reddit {
   color: var(--color-orangered);
   background-image: linear-gradient(90deg, var(--color-orangered), white);
+}
+
+.gradient--color-mastodon {
+  color: var(--color-mastodon-blue);
+  background-image: linear-gradient(90deg, var(--color-mastodon-blue), var(--color-baba-cyan));
 }
 
 .link {
